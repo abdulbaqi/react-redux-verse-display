@@ -16,3 +16,38 @@ git commit -m 'first'
 git remote add origin https://github.com/abdulbaqi/react-redux-verse-display.git
 git push -u origin master
 ```
+
+## basic scaffolding
+
+Delete all files inside `src` and create a new `index.js` with the content:
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './component/App';
+
+ReactDOM.render(<App />, document.querySelector('#root'));
+
+```
+
+and then create the folder with content `component/App.js`
+
+```javascript
+import React from 'react';
+
+class App extends React.Component {
+    render()
+    {
+        return <div>React started successfully...</div>;
+    }
+}
+
+export default App;
+```
+As an aesthetics, incorporate `Semantic UI` also in the `public/index.html` file. 
+Note: I am using `prettier` within vcode to tidy up the code. Use `alt+shift+f`. 
+
+## get redux, axios and thunk
+
+Now, we need to get four packages that brings redux, helps in getting api data (i.e., axios) and redux-thunk (which we will discuss later)
+
