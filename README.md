@@ -49,5 +49,35 @@ Note: I am using `prettier` within vcode to tidy up the code. Use `alt+shift+f`.
 
 ## get redux, axios and thunk
 
-Now, we need to get four packages that brings redux, helps in getting api data (i.e., axios) and redux-thunk (which we will discuss later)
+Now, we need to get four packages that brings redux, helps in getting api data (i.e., axios) and redux-thunk (which we will discuss later).
+
+Here is the `index.js` with integration of redux
+
+```javascript
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+
+import App from "./component/App";
+import reducers from "./reducers";
+
+ReactDOM.render(
+  <Provider store={createStore(reducers)}>
+    <App />
+  </Provider>,
+  document.querySelector("#root")
+);
+```
+
+And the `reducers/index.js` file
+
+```javascript 
+import { combineReducers } from "redux";
+
+export default combineReducers({
+  replaceMe: () => "I am dummy"
+});
+
+```
 
